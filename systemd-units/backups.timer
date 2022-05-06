@@ -1,0 +1,11 @@
+[Unit]
+Description=Schedule backups every six hours
+
+[Timer]
+Persistent=true
+OnBootSec=300
+Unit=backups.service
+OnCalendar=*-*-* 07:00:00
+
+[Install]
+WantedBy=timers.target

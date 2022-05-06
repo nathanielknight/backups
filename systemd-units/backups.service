@@ -1,0 +1,10 @@
+[Unit]
+Description=Take scheduled backups.
+
+[Service]
+Type=simple
+ExecStart=%h/backups/take-backups.py
+Environment="RESTIC_PASSWORD=bitingkitsamazedspreadfollow"
+
+[Install]
+WantedBy=default.target
