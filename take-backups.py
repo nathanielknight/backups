@@ -82,9 +82,22 @@ def forget_old_backups() -> None:
     subprocess.run(cmd).check_returncode()
 
 
+def sync_to_onedrive() -> None:
+    log.info("Syncing to OneDrive")
+    cmd = [
+        "rclone",
+        "copy",
+        str(REPO_PATH),
+        "onedrive:restic-repo",
+    ]
+    subprocess.run(cmd).check_returncode()
+
+
+
 if __name__ == "__main__":
     check_restic_cmd()
     collect_restic_password()
     check_repo()
     backup_folders()
     forget_old_backups()
+    sync_to_onedrive()
