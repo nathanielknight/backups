@@ -58,6 +58,7 @@ def check_repo() -> None:
 BACKED_UP_FOLDERS = [
     pathlib.Path("~/projects"),
     pathlib.Path("~/services"),
+    pathlib.Path("~/documents"),
 ]
 
 
